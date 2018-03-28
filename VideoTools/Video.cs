@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Xabe.FFmpeg;
 
 namespace VideoTools
 {
     public class Video : IDisposable
     {
-        public Video(string path)
+        public Video(IMediaInfo mediaInfo)
         {
-            this.Details = path;
-            Task.Delay(2000).Wait();
+            this.MediaInfo = mediaInfo;
+            this.Details = $"Length: {mediaInfo.Duration:g}";
         }
+
+        public IMediaInfo MediaInfo { get; }
 
         public string Details { get; }
 

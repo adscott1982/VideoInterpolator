@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 using Xabe.FFmpeg;
+using Xabe.FFmpeg.Streams;
 
 namespace VideoTools
 {
@@ -8,9 +9,7 @@ namespace VideoTools
     {
         public static async Task<Video> LoadVideoFileAsync(string path)
         {
-            var mediaInfo = await MediaInfo.Get(path);
-            var video = await Task.Run(() => new Video(path));
-            return video;
+            return new Video(await MediaInfo.Get(path));
         }
     }
 }
