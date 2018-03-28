@@ -2,7 +2,6 @@
 
 namespace VideoInterpolator.ViewModels
 {
-    using System.Threading.Tasks;
     using Prism.Commands;
     using Prism.Mvvm;
 
@@ -16,7 +15,7 @@ namespace VideoInterpolator.ViewModels
 
         public MainWindowViewModel()
         {
-            this.VideoDetails = "No video loaded.";
+            this.VideoDetails = "";
             this.LoadVideoCommand = new DelegateCommand(this.LoadVideo, this.CanLoadVideo).ObservesProperty(() => this.IsProcessing);
         }
 
@@ -44,7 +43,8 @@ namespace VideoInterpolator.ViewModels
                 return;
             }
 
-            this.VideoDetails = $"File selected: {openFileDialog.FileName}";
+            var video = await VideoTools.FileManagement.LoadVideoFileAsync(openFileDialog.FileName);
+            this.VideoDetails = video.Details;
 
             this.IsProcessing = false;
         }

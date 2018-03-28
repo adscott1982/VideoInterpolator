@@ -108,6 +108,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VideoTools\VideoTools.csproj">
+      <Project>{cf9c36c1-7fa4-4531-b00e-434f9848f813}</Project>
+      <Name>VideoTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
