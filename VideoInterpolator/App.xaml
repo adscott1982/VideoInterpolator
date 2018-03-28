@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:VideoInterpolator"
              StartupUri="Views/MainWindowView.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

@@ -9,7 +9,7 @@
     {
         public MainWindowView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
