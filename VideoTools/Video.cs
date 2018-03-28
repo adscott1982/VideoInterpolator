@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace VideoTools
 {
-    public class Video
+    public class Video : IDisposable
     {
         public Video(string path)
         {
@@ -11,5 +12,9 @@ namespace VideoTools
         }
 
         public string Details { get; }
+
+        public void Dispose()
+        {
+        }
     }
 }
