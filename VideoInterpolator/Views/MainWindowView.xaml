@@ -20,7 +20,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical">
-            <Button Margin="5" Padding="3" Content="Open File" Command="{Binding LoadVideoCommand}"/>
+            <Button Margin="5 5 5 0" Padding="3" Content="Open File" Command="{Binding LoadVideoCommand}"/>
+            <Button Margin="5 5 5 0" Padding="3" Content="Extract Frames" Command="{Binding ExtractFramesCommand}"/>
         </StackPanel>
         <TextBlock Grid.Row="0" Margin="5" Padding="3" Grid.Column="1" Text="{Binding VideoDetails}"/>
     </Grid>

@@ -1,7 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xabe.FFmpeg;
-using Xabe.FFmpeg.Streams;
 
 namespace VideoTools
 {
@@ -10,6 +9,13 @@ namespace VideoTools
         public static async Task<Video> LoadVideoFileAsync(string path)
         {
             return new Video(await MediaInfo.Get(path));
+        }
+
+        public static async Task ExtractFramesFromVideo(Video video, string path)
+        {
+            await Task.Run(() =>
+            {
+            });
         }
     }
 }
